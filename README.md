@@ -11,11 +11,12 @@
 
 ```
 import java.util.Random;
-
+123
 
  敌飞机: 是飞行物，也是敌人
  
 public class Airplane extends FlyingObject implements Enemy {
+	private int speed = 3;  //移动步骤
 	private int speed = 3;  //移动步骤
 	
 	/** 初始化数据 */
