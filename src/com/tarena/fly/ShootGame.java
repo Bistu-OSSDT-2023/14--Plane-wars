@@ -17,8 +17,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class ShootGame extends JPanel {
-	public static final int WIDTH = 500; // 面板宽
-	public static final int HEIGHT = 900; // 面板高
+	public static final int WIDTH = 400; // 面板宽
+	public static final int HEIGHT = 800; // 面板高
 	/** 游戏的当前状态: START RUNNING PAUSE GAME_OVER */
 	private int state;
 	private static final int START = 0;
@@ -240,7 +240,7 @@ public class ShootGame extends JPanel {
 	/** 射击 */
 	public void shootAction() {
 		shootIndex++;
-		if (shootIndex % 10 == 0) { // 100毫秒发一颗
+		if (shootIndex % 30 == 0) { // 300毫秒发一颗
 			Bullet[] bs = hero.shoot(); // 英雄打出子弹
 			bullets = Arrays.copyOf(bullets, bullets.length + bs.length); // 扩容
 			System.arraycopy(bs, 0, bullets, bullets.length - bs.length,
