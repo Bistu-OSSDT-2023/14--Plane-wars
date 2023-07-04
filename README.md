@@ -713,18 +713,3 @@ public class ShootGame extends JPanel {  
     }  
   
 }  
-```
-
-#写在最后
-以上就是这个游戏我整理的完整代码，因为图片差不多9张，所以图片没上传，需要图片的友友请简信我，最后，我做了一张思维导图贴出来让大家更好的理解OOP面向对象编程的过程。
-
-![](http://wblearn.github.io/img/in-post/public/2556999-8217513e89c06a4a.webp)
-
-
-
->ps：码字很累，友友们点个赞或者关注，谢谢，么么哒~~
->资源已上传(包括图片)，下载地址请<a href="http://download.csdn.net/detail/wudalang_gd/9694422">戳这里</a>
-
-------2016/12/25更新---------------
-
-上面的小飞机游戏下载地址失效了，最近开通了[我的github博客](https://wblearn.github.io/)，欢迎大家测试，同时方便以后托管一些项目及资源。下载地址：[Java打飞机小游戏（附完整源码）](https://github.com/wblearn/Small-plane-game)
