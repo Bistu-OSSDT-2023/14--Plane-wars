@@ -337,7 +337,7 @@ public class ShootGame extends JPanel {
 				int type = a.getType(); // 获取奖励类型
 				switch (type) {
 				case Award.DOUBLE_FIRE:
-					flyings = new FlyingObject[0];// 设置双倍火力
+					hero.addDoubleFire(); // 设置双倍火力
 					break;
 				case Award.LIFE:
 					hero.addLife(); // 设置加命
