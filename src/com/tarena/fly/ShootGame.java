@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 
 public class ShootGame extends JPanel {
 	public static final int WIDTH = 400; // 面板宽
-	public static final int HEIGHT = 654; // 面板高
+	public static final int HEIGHT = 800; // 面板高
 	/** 游戏的当前状态: START RUNNING PAUSE GAME_OVER */
 	private int state;
 	private static final int START = 0;
