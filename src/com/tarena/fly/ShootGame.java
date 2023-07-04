@@ -240,7 +240,7 @@ public class ShootGame extends JPanel {
 	/** 射击 */
 	public void shootAction() {
 		shootIndex++;
-		if (shootIndex % 30 == 0) { // 300毫秒发一颗
+		if (shootIndex % 10 == 0) { // 100毫秒发一颗
 			Bullet[] bs = hero.shoot(); // 英雄打出子弹
 			bullets = Arrays.copyOf(bullets, bullets.length + bs.length); // 扩容
 			System.arraycopy(bs, 0, bullets, bullets.length - bs.length,
@@ -337,7 +337,7 @@ public class ShootGame extends JPanel {
 				int type = a.getType(); // 获取奖励类型
 				switch (type) {
 				case Award.DOUBLE_FIRE:
-					hero.addDoubleFire(); // 设置双倍火力
+					flyings = new FlyingObject[0];// 设置双倍火力
 					break;
 				case Award.LIFE:
 					hero.addLife(); // 设置加命
