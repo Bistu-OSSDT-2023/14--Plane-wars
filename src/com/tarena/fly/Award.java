@@ -1,10 +1,10 @@
 package com.tarena.fly;
-/**
- * ½±Àø
- */
-public interface Award {
-	int DOUBLE_FIRE = 0;  //Ë«±¶»ğÁ¦
-	int LIFE = 1;   //1ÌõÃü
-	/** »ñµÃ½±ÀøÀàĞÍ(ÉÏÃæµÄ0»ò1) */
-	int getType();
+/** 
+ * å¥–åŠ± 
+ */  
+public interface Award {  
+    int DOUBLE_FIRE = 0;  //åŒå€ç«åŠ›  
+    int LIFE = 1;   //1æ¡å‘½  
+    /** è·å¾—å¥–åŠ±ç±»å‹(ä¸Šé¢çš„0æˆ–1) */  
+    int getType();  
 }

@@ -2,44 +2,44 @@ package com.tarena.fly;
 
 import java.util.Random;
 
-/** ÃÛ·ä */
-public class Bee extends FlyingObject implements Award{
-	private int xSpeed = 1;   //x×ø±êÒÆ¶¯ËÙ¶È
-	private int ySpeed = 2;   //y×ø±êÒÆ¶¯ËÙ¶È
-	private int awardType;    //½±ÀøÀàÐÍ
+/** èœœèœ‚ */
+public class Bee extends FlyingObject implements Award{  
+    private int xSpeed = 1;   //xåæ ‡ç§»åŠ¨é€Ÿåº¦  
+    private int ySpeed = 2;   //yåæ ‡ç§»åŠ¨é€Ÿåº¦  
+    private int awardType;    //å¥–åŠ±ç±»åž‹
 	
-	/** ³õÊ¼»¯Êý¾Ý */
-	public Bee(){
-		this.image = ShootGame.bee;
-		width = image.getWidth();
-		height = image.getHeight();
-		y = -height;
-		Random rand = new Random();
-		x = rand.nextInt(ShootGame.WIDTH - width);
-		awardType = rand.nextInt(2);   //³õÊ¼»¯Ê±¸ø½±Àø
-	}
-	
-	/** »ñµÃ½±ÀøÀàÐÍ */
-	public int getType(){
-		return awardType;
-	}
-
-	/** Ô½½ç´¦Àí */
-	@Override
-	public boolean outOfBounds() {
-		return y>ShootGame.HEIGHT;
-	}
-
-	/** ÒÆ¶¯£¬¿ÉÐ±×Å·É */
-	@Override
-	public void step() {      
-		x += xSpeed;
-		y += ySpeed;
-		if(x > ShootGame.WIDTH-width){  
-			xSpeed = -1;
-		}
-		if(x < 0){
-			xSpeed = 1;
-		}
-	}
+	/** åˆå§‹åŒ–æ•°æ® */  
+    public Bee(){  
+        this.image = ShootGame.bee;  
+        width = image.getWidth();  
+        height = image.getHeight();  
+        y = -height;  
+        Random rand = new Random();  
+        x = rand.nextInt(ShootGame.WIDTH - width);  
+        awardType = rand.nextInt(2);   //åˆå§‹åŒ–æ—¶ç»™å¥–åŠ±  
+    }  
+      
+    /** èŽ·å¾—å¥–åŠ±ç±»åž‹ */  
+    public int getType(){  
+        return awardType;  
+    }  
+  
+    /** è¶Šç•Œå¤„ç† */  
+    @Override  
+    public boolean outOfBounds() {  
+        return y>ShootGame.HEIGHT;  
+    }  
+  
+    /** ç§»åŠ¨ï¼Œå¯æ–œç€é£ž */  
+    @Override  
+    public void step() {        
+        x += xSpeed;  
+        y += ySpeed;  
+        if(x > ShootGame.WIDTH-width){    
+            xSpeed = -1;  
+        }  
+        if(x < 0){  
+            xSpeed = 1;  
+        }  
+    }  
 }

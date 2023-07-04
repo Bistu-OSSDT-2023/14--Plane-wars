@@ -1,77 +1,77 @@
 package com.tarena.fly;
 
-import java.awt.image.BufferedImage;
-
-/**
- * ·ÉĞĞÎï(µĞ»ú£¬ÃÛ·ä£¬×Óµ¯£¬Ó¢ĞÛ»ú)
- */
-public abstract class FlyingObject {
-	protected int x;    //x×ø±ê
-	protected int y;    //y×ø±ê
-	protected int width;    //¿í
-	protected int height;   //¸ß
-	protected BufferedImage image;   //Í¼Æ¬
-
-	public int getX() {
-		return x;
-	}
-
-	public void setX(int x) {
-		this.x = x;
-	}
-
-	public int getY() {
-		return y;
-	}
-
-	public void setY(int y) {
-		this.y = y;
-	}
-
-	public int getWidth() {
-		return width;
-	}
-
-	public void setWidth(int width) {
-		this.width = width;
-	}
-
-	public int getHeight() {
-		return height;
-	}
-
-	public void setHeight(int height) {
-		this.height = height;
-	}
-
-	public BufferedImage getImage() {
-		return image;
-	}
-
-	public void setImage(BufferedImage image) {
-		this.image = image;
-	}
-
-	/**
-	 * ¼ì²éÊÇ·ñ³ö½ç
-	 * @return true ³ö½çÓë·ñ
-	 */
-	public abstract boolean outOfBounds();
-	
-	/**
-	 * ·ÉĞĞÎïÒÆ¶¯Ò»²½
-	 */
-	public abstract void step();
-	
-	/**
-	 * ¼ì²éµ±Ç°·ÉĞĞÎïÌåÊÇ·ñ±»×Óµ¯(x,y)»÷(shoot)ÖĞ
-	 * @param Bullet ×Óµ¯¶ÔÏó
-	 * @return true±íÊ¾±»»÷ÖĞÁË
-	 */
-	public boolean shootBy(Bullet bullet){
-		int x = bullet.x;  //×Óµ¯ºá×ø±ê
-		int y = bullet.y;  //×Óµ¯×İ×ø±ê
-		return this.x<x && x<this.x+width && this.y<y && y<this.y+height;
-	}
-
-}
+import java.awt.image.BufferedImage;  
+  
+/** 
+ * é£è¡Œç‰©(æ•Œæœºï¼Œèœœèœ‚ï¼Œå­å¼¹ï¼Œè‹±é›„æœº) 
+ */  
+public abstract class FlyingObject {  
+    protected int x;    //xåæ ‡  
+    protected int y;    //yåæ ‡  
+    protected int width;    //å®½  
+    protected int height;   //é«˜  
+    protected BufferedImage image;   //å›¾ç‰‡  
+  
+    public int getX() {  
+        return x;  
+    }  
+  
+    public void setX(int x) {  
+        this.x = x;  
+    }  
+  
+    public int getY() {  
+        return y;  
+    }  
+  
+    public void setY(int y) {  
+        this.y = y;  
+    }  
+  
+    public int getWidth() {  
+        return width;  
+    }  
+  
+    public void setWidth(int width) {  
+        this.width = width;  
+    }  
+  
+    public int getHeight() {  
+        return height;  
+    }  
+  
+    public void setHeight(int height) {  
+        this.height = height;  
+    }  
+  
+    public BufferedImage getImage() {  
+        return image;  
+    }  
+  
+    public void setImage(BufferedImage image) {  
+        this.image = image;  
+    }  
+  
+    /** 
+     * æ£€æŸ¥æ˜¯å¦å‡ºç•Œ 
+     * @return true å‡ºç•Œä¸å¦ 
+     */  
+    public abstract boolean outOfBounds();  
+      
+    /** 
+     * é£è¡Œç‰©ç§»åŠ¨ä¸€æ­¥ 
+     */  
+    public abstract void step();  
+      
+    /** 
+     * æ£€æŸ¥å½“å‰é£è¡Œç‰©ä½“æ˜¯å¦è¢«å­å¼¹(x,y)å‡»(shoot)ä¸­ 
+     * @param Bullet å­å¼¹å¯¹è±¡ 
+     * @return trueè¡¨ç¤ºè¢«å‡»ä¸­äº† 
+     */  
+    public boolean shootBy(Bullet bullet){  
+        int x = bullet.x;  //å­å¼¹æ¨ªåæ ‡  
+        int y = bullet.y;  //å­å¼¹çºµåæ ‡  
+        return this.x<x && x<this.x+width && this.y<y && y<this.y+height;  
+    }  
+  
+} 

@@ -1,28 +1,29 @@
 package com.tarena.fly;
 
-/**
- * ×Óµ¯Àà:ÊÇ·ÉĞĞÎï
- */
-public class Bullet extends FlyingObject {
-	private int speed = 3;  //ÒÆ¶¯µÄËÙ¶È
-	
-	/** ³õÊ¼»¯Êı¾İ */
-	public Bullet(int x,int y){
-		this.x = x;
-		this.y = y;
-		this.image = ShootGame.bullet;
-	}
-
-	/** ÒÆ¶¯ */
-	@Override
-	public void step(){   
-		y-=speed;
-	}
-
-	/** Ô½½ç´¦Àí */
-	@Override
-	public boolean outOfBounds() {
-		return y<-height;
-	}
-
+/** 
+ * å­å¼¹ç±»:æ˜¯é£è¡Œç‰© 
+ */  
+public class Bullet extends FlyingObject {  
+    private int speed = 3;  //ç§»åŠ¨çš„é€Ÿåº¦  
+      
+    /** åˆå§‹åŒ–æ•°æ® */  
+    public Bullet(int x,int y){  
+        this.x = x;  
+        this.y = y;  
+        this.image = ShootGame.bullet;  
+    }  
+  
+    /** ç§»åŠ¨ */  
+    @Override  
+    public void step(){     
+        y-=speed;  
+    }  
+  
+    /** è¶Šç•Œå¤„ç† */  
+    @Override  
+    public boolean outOfBounds() {  
+        return y<-height;  
+    }  
+  
 }
+

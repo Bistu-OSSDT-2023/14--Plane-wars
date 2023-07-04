@@ -2,14 +2,13 @@ package com.tarena.fly;
 
 import java.util.Random;
 
-/**
- * �зɻ�: �Ƿ����Ҳ�ǵ���
- */
+
+ /**敌飞机: 是飞行物，也是敌人 */
+ 
 public class Airplane extends FlyingObject implements Enemy {
-	private int speed = 3;  //�ƶ�����
+	private int speed = 3;  //移动步骤
 	
-	/** ��ʼ������ */
-	
+	/** 初始化数据 */
 	public Airplane(){
 		this.image = ShootGame.airplane;
 		width = image.getWidth();
@@ -19,23 +18,22 @@ public class Airplane extends FlyingObject implements Enemy {
 		x = rand.nextInt(ShootGame.WIDTH - width);
 	}
 	
-	/** ��ȡ���� */
+	/** 获取分数 */
 	@Override
 	public int getScore() {  
 		return 5;
 	}
 
-	/** //Խ�紦�� */
+	/** //越界处理 */
 	@Override
 	public 	boolean outOfBounds() {   
 		return y>ShootGame.HEIGHT;
 	}
 
-	/** �ƶ� */
+	/** 移动 */
 	@Override
 	public void step() {   
 		y += speed;
 	}
 
 }
-
