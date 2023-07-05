@@ -6,8 +6,8 @@ import java.util.Random;
  /**敌飞机: 是飞行物，也是敌人 */
  
 public class Airplane extends FlyingObject implements Enemy {
-	private int speed = 3;  //移动步骤
-	
+	private int yyspeed = 3;  //y坐标移动速度
+	private int xxspeed = 1;  //x坐标移动速度
 	/** 初始化数据 */
 	public Airplane(){
 		this.image = ShootGame.airplane;
@@ -32,8 +32,15 @@ public class Airplane extends FlyingObject implements Enemy {
 
 	/** 移动 */
 	@Override
-	public void step() {   
-		y += speed;
+	public void step() {  
+		x += xxspeed; 
+		y += yyspeed;
+		if(x > ShootGame.WIDTH-width){    
+            xxspeed = -1;  
+        }  
+        if(x < 0){  
+            xxspeed = 1;  
+        }  
 	}
 
 }
