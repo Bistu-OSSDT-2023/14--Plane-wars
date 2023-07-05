@@ -1,4 +1,4 @@
-[](https://github.com/Bistu-OSSDT-2023/14--AviadilaMilito/blob/main/%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98.gif)
+![image](https://github.com/Bistu-OSSDT-2023/14--AviadilaMilito/blob/main/%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98.gif)
 # AviadilaMilito
 
 ## Before：
