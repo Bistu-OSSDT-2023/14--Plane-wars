@@ -334,6 +334,9 @@ public class ShootGame extends JPanel {
 			flyings[flyings.length - 1] = temp;
 
 			flyings = Arrays.copyOf(flyings, flyings.length - 1); // 删除最后一个飞行物(即被击中的)
+			bullets = Arrays.copyOf(bullets, bullets.length - 1); // 删除最后一个子弹(即击中飞行物的)
+
+
 
 			
 
