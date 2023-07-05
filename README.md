@@ -47,4 +47,4 @@ ppt制作（魏来）
 文档撰写（高天祝）
 
 ## 运行
-java环境运行"14--AviadilaMilito\src\com\tarena\fly\ShootGame.java"
+java环境运行"14--Plane wars\src\com\tarena\fly\ShootGame.java"
