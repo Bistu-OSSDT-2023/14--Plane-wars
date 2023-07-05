@@ -108,6 +108,7 @@ public class ShootGame extends JPanel {
 		g.drawString("SCORE:" + score, x, y); // 画分数
 		y=y+20; // y坐标增20
 		g.drawString("LIFE:" + hero.getLife(), x, y); // 画命
+		
 	}
 
 	/** 画游戏状态 */
@@ -190,9 +191,11 @@ public class ShootGame extends JPanel {
 			@Override
 			public void run() {
 				if (state == RUNNING) { // 运行状态
-					enterAction(); // 飞行物入场
+					int flyspeed = 40;
+					int zidanspeed = 30;
+					enterAction(flyspeed); // 飞行物入场
 					stepAction(); // 走一步
-					shootAction(); // 英雄机射击
+					shootAction(zidanspeed); // 英雄机射击
 					bangAction(); // 子弹打飞行物
 					outOfBoundsAction(); // 删除越界飞行物及子弹
 					checkGameOverAction(); // 检查游戏结束
@@ -206,9 +209,12 @@ public class ShootGame extends JPanel {
 	int flyEnteredIndex = 0; // 飞行物入场计数
 
 	/** 飞行物入场 */
-	public void enterAction() {
+	public void enterAction(int speed) {
 		flyEnteredIndex++;
-		if (flyEnteredIndex % 40 == 0) { // 400毫秒生成一个飞行物--10*40
+		if(score%20==0){
+			speed=speed-10;
+		}
+		if (flyEnteredIndex % speed == 0) { // speed*10 毫秒生成一个飞行物--10*speed
 			FlyingObject obj = nextOne(); // 随机生成一个飞行物
 			flyings = Arrays.copyOf(flyings, flyings.length + 1);
 			flyings[flyings.length - 1] = obj;
@@ -240,9 +246,9 @@ public class ShootGame extends JPanel {
 	int shootIndex = 0; // 射击计数
 
 	/** 射击 */
-	public void shootAction() {
+	public void shootAction(int zidanspeed) {
 		shootIndex++;
-		if (shootIndex % 30 == 0) { // 300毫秒发一颗
+		if (shootIndex % zidanspeed == 0) { // zidanspeed*10毫秒发一颗
 			Bullet[] bs = hero.shoot(); // 英雄打出子弹
 			bullets = Arrays.copyOf(bullets, bullets.length + bs.length); // 扩容
 			System.arraycopy(bs, 0, bullets, bullets.length - bs.length,
