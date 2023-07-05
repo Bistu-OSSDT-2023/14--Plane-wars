@@ -8,15 +8,15 @@
 
 ## 小组成员：
 
-卢田红（组长）![1](https://github.com/moyanislth)
+[卢田红](https://github.com/moyanislth)
 
-揭英铿![1](https://github.com/jyk2331)
+[揭英铿](https://github.com/jyk2331)
 
-高天祝![1](https://github.com/baimaosir)
+[高天祝](https://github.com/baimaosir)
 
-宋昊伟![1](https://github.com/Crcrys)
+[宋昊伟](https://github.com/Crcrys)
 
-魏来![1](https://github.com/acaleph15978)
+[魏来](https://github.com/acaleph15978)
 
 ## 特别鸣谢：
 
