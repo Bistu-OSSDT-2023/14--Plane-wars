@@ -16,7 +16,7 @@ public class Bee extends FlyingObject implements Award{
         y = -height;  
         Random rand = new Random();  
         x = rand.nextInt(ShootGame.WIDTH - width);  
-        awardType = rand.nextInt(2);   //初始化时给奖励  
+        awardType = rand.nextInt(3);   //初始化时给奖励  
     }  
       
     /** 获得奖励类型 */  

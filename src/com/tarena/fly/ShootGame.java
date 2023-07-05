@@ -287,6 +287,7 @@ public class ShootGame extends JPanel {
 		bullets = Arrays.copyOf(bulletLives, index); // 将不越界的子弹留着
 	}
 
+
 	/** 检查游戏结束 */
 	public void checkGameOverAction() {
 		if (isGameOver()==true) {
@@ -353,6 +354,9 @@ public class ShootGame extends JPanel {
 				case Award.LIFE:
 					hero.addLife(); // 设置加命
 					break;
+				case Award.CLEAR:
+				    flyings = new FlyingObject[0]; // 清空飞行物
+					break;
 				}
 			}
 		}
@@ -366,10 +370,10 @@ public class ShootGame extends JPanel {
 	public static FlyingObject nextOne() {
 		Random random = new Random();
 		int type = random.nextInt(20); // [0,20)
-		if (type < 4) {
+		if (type < 2) {
 			return new Bee();
 		} 
-		else if(type>=4&&type<8){
+		else if(type>=2&&type<6){
 			return new Stone();
 		}
 		else {
