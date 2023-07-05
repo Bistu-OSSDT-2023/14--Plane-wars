@@ -34,6 +34,7 @@ public class ShootGame extends JPanel {
 	public static BufferedImage start;
 	public static BufferedImage airplane;
 	public static BufferedImage bee;
+	public static BufferedImage stone;
 	public static BufferedImage bullet;
 	public static BufferedImage hero0;
 	public static BufferedImage hero1;
@@ -52,6 +53,7 @@ public class ShootGame extends JPanel {
 			airplane = ImageIO
 					.read(ShootGame.class.getResource("airplane.png"));
 			bee = ImageIO.read(ShootGame.class.getResource("bee.png"));
+			stone = ImageIO.read(ShootGame.class.getResource("stone.png"));
 			bullet = ImageIO.read(ShootGame.class.getResource("bullet.png"));
 			hero0 = ImageIO.read(ShootGame.class.getResource("hero0.png"));
 			hero1 = ImageIO.read(ShootGame.class.getResource("hero1.png"));
@@ -357,7 +359,11 @@ public class ShootGame extends JPanel {
 		int type = random.nextInt(20); // [0,20)
 		if (type < 4) {
 			return new Bee();
-		} else {
+		} 
+		else if(type>=4&&type<10){
+			return new Stone();
+		}
+		else {
 			return new Airplane();
 		}
 	}
