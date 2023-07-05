@@ -7,7 +7,7 @@
 
 ## 小组成员：
 
-卢田红（组长）
+卢田红（组长）(https://github.com/moyanislth)
 
 揭英铿
 
