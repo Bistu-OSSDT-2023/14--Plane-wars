@@ -208,7 +208,7 @@ public class ShootGame extends JPanel {
 	/** 飞行物入场 */
 	public void enterAction() {
 		flyEnteredIndex++;
-		if (flyEnteredIndex % 30 == 0) { // 300毫秒生成一个飞行物--10*40
+		if (flyEnteredIndex % 40 == 0) { // 400毫秒生成一个飞行物--10*40
 			FlyingObject obj = nextOne(); // 随机生成一个飞行物
 			flyings = Arrays.copyOf(flyings, flyings.length + 1);
 			flyings[flyings.length - 1] = obj;
@@ -242,7 +242,7 @@ public class ShootGame extends JPanel {
 	/** 射击 */
 	public void shootAction() {
 		shootIndex++;
-		if (shootIndex % 90 == 0) { //900毫秒发一颗
+		if (shootIndex % 30 == 0) { // 300毫秒发一颗
 			Bullet[] bs = hero.shoot(); // 英雄打出子弹
 			bullets = Arrays.copyOf(bullets, bullets.length + bs.length); // 扩容
 			System.arraycopy(bs, 0, bullets, bullets.length - bs.length,
@@ -311,11 +311,9 @@ public class ShootGame extends JPanel {
 		return hero.getLife() <= 0;
 	}
 
-	
 	/** 子弹和飞行物之间的碰撞检查 */
 	public void bang(Bullet bullet) {
 		int index = -1; // 击中的飞行物索引
-		// 遍历所有飞行物
 		for (int i = 0; i < flyings.length; i++) {
 			FlyingObject obj = flyings[i];
 			if (obj.shootBy(bullet)) { // 判断是否击中
@@ -323,11 +321,8 @@ public class ShootGame extends JPanel {
 				break;
 			}
 		}
-		// 有击中的飞行物
-		if (index != -1) { 
+		if (index != -1) { // 有击中的飞行物
 			FlyingObject one = flyings[index]; // 记录被击中的飞行物
-			
-
 
 			FlyingObject temp = flyings[index]; // 被击中的飞行物与最后一个飞行物交换
 			flyings[index] = flyings[flyings.length - 1];
@@ -335,10 +330,6 @@ public class ShootGame extends JPanel {
 
 			flyings = Arrays.copyOf(flyings, flyings.length - 1); // 删除最后一个飞行物(即被击中的)
 			bullets = Arrays.copyOf(bullets, bullets.length - 1); // 删除最后一个子弹(即击中飞行物的)
-
-
-
-			
 
 
 
@@ -350,17 +341,16 @@ public class ShootGame extends JPanel {
 				Award a = (Award) one;
 				int type = a.getType(); // 获取奖励类型
 				switch (type) {
-					case Award.DOUBLE_FIRE:
-						hero.addDoubleFire(); // 设置双倍火力
-						break;
-					case Award.LIFE:
-						hero.addLife(); // 设置加命
-						break;
+				case Award.DOUBLE_FIRE:
+					hero.addDoubleFire(); // 设置双倍火力
+					break;
+				case Award.LIFE:
+					hero.addLife(); // 设置加命
+					break;
 				}
 			}
 		}
 	}
-
 
 	/**
 	 * 随机生成飞行物
