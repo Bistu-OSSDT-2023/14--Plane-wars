@@ -2,7 +2,7 @@ package com.tarena.fly;
 import java.util.Random;
 public class Stone extends FlyingObject implements Award{
      
-        private int xSpeed = 3;   //x坐标移动速度  
+        private int xSpeed = 0;   //x坐标移动速度  
         private int ySpeed = 2;   //y坐标移动速度  
         private int awardType;    //奖励类型
         

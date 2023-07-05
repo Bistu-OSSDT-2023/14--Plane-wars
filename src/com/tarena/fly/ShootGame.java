@@ -363,7 +363,7 @@ public class ShootGame extends JPanel {
 		if (type < 4) {
 			return new Bee();
 		} 
-		else if(type>=4&&type<10){
+		else if(type>=4&&type<8){
 			return new Stone();
 		}
 		else {
