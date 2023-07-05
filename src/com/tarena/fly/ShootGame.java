@@ -191,8 +191,6 @@ public class ShootGame extends JPanel {
 			@Override
 			public void run() {
 				if (state == RUNNING) { // 运行状态
-					int flyspeed = 40;
-					int zidanspeed = 30;
 					enterAction(); // 飞行物入场
 					stepAction(); // 走一步
 					shootAction(); // 英雄机射击
@@ -211,7 +209,7 @@ public class ShootGame extends JPanel {
 	/** 飞行物入场 */
 	public void enterAction() {
 		flyEnteredIndex++;
-		if (flyEnteredIndex % 40 == 0) { // 400毫秒生成一个飞行物--10*40
+		if (flyEnteredIndex % 30 == 0) { // 300毫秒生成一个飞行物--10*40
 			FlyingObject obj = nextOne(); // 随机生成一个飞行物
 			flyings = Arrays.copyOf(flyings, flyings.length + 1);
 			flyings[flyings.length - 1] = obj;
@@ -245,7 +243,7 @@ public class ShootGame extends JPanel {
 	/** 射击 */
 	public void shootAction() {
 		shootIndex++;
-		if (shootIndex % ((score+300)/15) == 0) { // (score+300)/15)*10毫秒发一颗
+		if (shootIndex % ((score+300)/10) == 0) { // (score+300)/15)*10毫秒发一颗
 			Bullet[] bs = hero.shoot(); // 英雄打出子弹
 			bullets = Arrays.copyOf(bullets, bullets.length + bs.length); // 扩容
 			System.arraycopy(bs, 0, bullets, bullets.length - bs.length,
